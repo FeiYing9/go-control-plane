@@ -19,8 +19,8 @@ import (
 	"context"
 	"errors"
 
-	discovery "github.com/FeiYing9/go-control-plane/envoy/service/discovery/v3"
-	"github.com/FeiYing9/go-control-plane/pkg/cache/v3"
+	discovery "github.com/envoyproxy/go-control-plane/envoy/service/discovery/v3"
+	"github.com/envoyproxy/go-control-plane/pkg/cache/v3"
 )
 
 type Server interface {

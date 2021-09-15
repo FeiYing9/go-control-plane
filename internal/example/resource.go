@@ -18,16 +18,16 @@ import (
 
 	"github.com/golang/protobuf/ptypes"
 
-	cluster "github.com/FeiYing9/go-control-plane/envoy/config/cluster/v3"
-	core "github.com/FeiYing9/go-control-plane/envoy/config/core/v3"
-	endpoint "github.com/FeiYing9/go-control-plane/envoy/config/endpoint/v3"
-	listener "github.com/FeiYing9/go-control-plane/envoy/config/listener/v3"
-	route "github.com/FeiYing9/go-control-plane/envoy/config/route/v3"
-	hcm "github.com/FeiYing9/go-control-plane/envoy/extensions/filters/network/http_connection_manager/v3"
-	"github.com/FeiYing9/go-control-plane/pkg/cache/types"
-	"github.com/FeiYing9/go-control-plane/pkg/cache/v3"
-	"github.com/FeiYing9/go-control-plane/pkg/resource/v3"
-	"github.com/FeiYing9/go-control-plane/pkg/wellknown"
+	cluster "github.com/envoyproxy/go-control-plane/envoy/config/cluster/v3"
+	core "github.com/envoyproxy/go-control-plane/envoy/config/core/v3"
+	endpoint "github.com/envoyproxy/go-control-plane/envoy/config/endpoint/v3"
+	listener "github.com/envoyproxy/go-control-plane/envoy/config/listener/v3"
+	route "github.com/envoyproxy/go-control-plane/envoy/config/route/v3"
+	hcm "github.com/envoyproxy/go-control-plane/envoy/extensions/filters/network/http_connection_manager/v3"
+	"github.com/envoyproxy/go-control-plane/pkg/cache/types"
+	"github.com/envoyproxy/go-control-plane/pkg/cache/v3"
+	"github.com/envoyproxy/go-control-plane/pkg/resource/v3"
+	"github.com/envoyproxy/go-control-plane/pkg/wellknown"
 )
 
 const (

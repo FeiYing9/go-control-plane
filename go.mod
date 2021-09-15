@@ -1,4 +1,4 @@
-module github.com/FeiYing9/go-control-plane
+module github.com/envoyproxy/go-control-plane
 
 go 1.14
 
@@ -15,5 +15,3 @@ require (
 	google.golang.org/grpc v1.40.0
 	google.golang.org/protobuf v1.27.1
 )
-
-replace github.com/envoyproxy/go-control-plane => github.com/FeiYing9/go-control-plane v0.9.9-xprotocol
