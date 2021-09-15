@@ -7,8 +7,8 @@
 package envoy_config_filter_network_rbac_v2
 
 import (
-	v2 "github.com/FeiYing9/go-control-plane/envoy/config/rbac/v2"
 	_ "github.com/cncf/udpa/go/udpa/annotations"
+	v2 "github.com/envoyproxy/go-control-plane/envoy/config/rbac/v2"
 	_ "github.com/envoyproxy/protoc-gen-validate/validate"
 	proto "github.com/golang/protobuf/proto"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"

@@ -7,8 +7,8 @@
 package envoy_extensions_clusters_dynamic_forward_proxy_v3
 
 import (
-	v3 "github.com/FeiYing9/go-control-plane/envoy/extensions/common/dynamic_forward_proxy/v3"
 	_ "github.com/cncf/udpa/go/udpa/annotations"
+	v3 "github.com/envoyproxy/go-control-plane/envoy/extensions/common/dynamic_forward_proxy/v3"
 	_ "github.com/envoyproxy/protoc-gen-validate/validate"
 	proto "github.com/golang/protobuf/proto"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"

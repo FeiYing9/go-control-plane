@@ -8,9 +8,9 @@ package envoy_service_trace_v3
 
 import (
 	context "context"
-	v3 "github.com/FeiYing9/go-control-plane/envoy/config/core/v3"
 	v1 "github.com/census-instrumentation/opencensus-proto/gen-go/trace/v1"
 	_ "github.com/cncf/udpa/go/udpa/annotations"
+	v3 "github.com/envoyproxy/go-control-plane/envoy/config/core/v3"
 	_ "github.com/envoyproxy/protoc-gen-validate/validate"
 	proto "github.com/golang/protobuf/proto"
 	_ "google.golang.org/genproto/googleapis/api/annotations"

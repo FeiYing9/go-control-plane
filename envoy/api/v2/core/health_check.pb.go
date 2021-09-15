@@ -7,10 +7,10 @@
 package envoy_api_v2_core
 
 import (
-	_ "github.com/FeiYing9/go-control-plane/envoy/annotations"
-	_type "github.com/FeiYing9/go-control-plane/envoy/type"
-	matcher "github.com/FeiYing9/go-control-plane/envoy/type/matcher"
 	_ "github.com/cncf/udpa/go/udpa/annotations"
+	_ "github.com/envoyproxy/go-control-plane/envoy/annotations"
+	_type "github.com/envoyproxy/go-control-plane/envoy/type"
+	matcher "github.com/envoyproxy/go-control-plane/envoy/type/matcher"
 	_ "github.com/envoyproxy/protoc-gen-validate/validate"
 	proto "github.com/golang/protobuf/proto"
 	any "github.com/golang/protobuf/ptypes/any"

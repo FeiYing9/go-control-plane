@@ -7,9 +7,9 @@
 package envoy_service_tap_v2alpha
 
 import (
-	core "github.com/FeiYing9/go-control-plane/envoy/api/v2/core"
-	route "github.com/FeiYing9/go-control-plane/envoy/api/v2/route"
 	_ "github.com/cncf/udpa/go/udpa/annotations"
+	core "github.com/envoyproxy/go-control-plane/envoy/api/v2/core"
+	route "github.com/envoyproxy/go-control-plane/envoy/api/v2/route"
 	_ "github.com/envoyproxy/protoc-gen-validate/validate"
 	proto "github.com/golang/protobuf/proto"
 	wrappers "github.com/golang/protobuf/ptypes/wrappers"

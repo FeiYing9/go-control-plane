@@ -7,8 +7,8 @@
 package envoy_admin_v2alpha
 
 import (
-	v2 "github.com/FeiYing9/go-control-plane/envoy/config/bootstrap/v2"
 	_ "github.com/cncf/udpa/go/udpa/annotations"
+	v2 "github.com/envoyproxy/go-control-plane/envoy/config/bootstrap/v2"
 	proto "github.com/golang/protobuf/proto"
 	any "github.com/golang/protobuf/ptypes/any"
 	timestamp "github.com/golang/protobuf/ptypes/timestamp"

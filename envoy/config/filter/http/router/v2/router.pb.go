@@ -7,8 +7,8 @@
 package envoy_config_filter_http_router_v2
 
 import (
-	v2 "github.com/FeiYing9/go-control-plane/envoy/config/filter/accesslog/v2"
 	_ "github.com/cncf/udpa/go/udpa/annotations"
+	v2 "github.com/envoyproxy/go-control-plane/envoy/config/filter/accesslog/v2"
 	_ "github.com/envoyproxy/protoc-gen-validate/validate"
 	proto "github.com/golang/protobuf/proto"
 	wrappers "github.com/golang/protobuf/ptypes/wrappers"

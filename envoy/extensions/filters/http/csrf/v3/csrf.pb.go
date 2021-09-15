@@ -7,9 +7,9 @@
 package envoy_extensions_filters_http_csrf_v3
 
 import (
-	v3 "github.com/FeiYing9/go-control-plane/envoy/config/core/v3"
-	v31 "github.com/FeiYing9/go-control-plane/envoy/type/matcher/v3"
 	_ "github.com/cncf/udpa/go/udpa/annotations"
+	v3 "github.com/envoyproxy/go-control-plane/envoy/config/core/v3"
+	v31 "github.com/envoyproxy/go-control-plane/envoy/type/matcher/v3"
 	_ "github.com/envoyproxy/protoc-gen-validate/validate"
 	proto "github.com/golang/protobuf/proto"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"

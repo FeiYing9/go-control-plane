@@ -7,10 +7,10 @@
 package envoy_config_tap_v4alpha
 
 import (
-	v4alpha "github.com/FeiYing9/go-control-plane/envoy/config/common/matcher/v4alpha"
-	v4alpha1 "github.com/FeiYing9/go-control-plane/envoy/config/core/v4alpha"
-	v4alpha2 "github.com/FeiYing9/go-control-plane/envoy/config/route/v4alpha"
 	_ "github.com/cncf/udpa/go/udpa/annotations"
+	v4alpha "github.com/envoyproxy/go-control-plane/envoy/config/common/matcher/v4alpha"
+	v4alpha1 "github.com/envoyproxy/go-control-plane/envoy/config/core/v4alpha"
+	v4alpha2 "github.com/envoyproxy/go-control-plane/envoy/config/route/v4alpha"
 	_ "github.com/envoyproxy/protoc-gen-validate/validate"
 	proto "github.com/golang/protobuf/proto"
 	wrappers "github.com/golang/protobuf/ptypes/wrappers"

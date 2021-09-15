@@ -7,9 +7,9 @@
 package envoy_config_filter_network_redis_proxy_v2
 
 import (
-	_ "github.com/FeiYing9/go-control-plane/envoy/annotations"
-	core "github.com/FeiYing9/go-control-plane/envoy/api/v2/core"
 	_ "github.com/cncf/udpa/go/udpa/annotations"
+	_ "github.com/envoyproxy/go-control-plane/envoy/annotations"
+	core "github.com/envoyproxy/go-control-plane/envoy/api/v2/core"
 	_ "github.com/envoyproxy/protoc-gen-validate/validate"
 	proto "github.com/golang/protobuf/proto"
 	duration "github.com/golang/protobuf/ptypes/duration"

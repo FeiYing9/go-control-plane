@@ -7,9 +7,9 @@
 package envoy_config_filter_network_rate_limit_v2
 
 import (
-	ratelimit "github.com/FeiYing9/go-control-plane/envoy/api/v2/ratelimit"
-	v2 "github.com/FeiYing9/go-control-plane/envoy/config/ratelimit/v2"
 	_ "github.com/cncf/udpa/go/udpa/annotations"
+	ratelimit "github.com/envoyproxy/go-control-plane/envoy/api/v2/ratelimit"
+	v2 "github.com/envoyproxy/go-control-plane/envoy/config/ratelimit/v2"
 	_ "github.com/envoyproxy/protoc-gen-validate/validate"
 	proto "github.com/golang/protobuf/proto"
 	duration "github.com/golang/protobuf/ptypes/duration"

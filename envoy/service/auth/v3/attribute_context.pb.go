@@ -7,8 +7,8 @@
 package envoy_service_auth_v3
 
 import (
-	v3 "github.com/FeiYing9/go-control-plane/envoy/config/core/v3"
 	_ "github.com/cncf/udpa/go/udpa/annotations"
+	v3 "github.com/envoyproxy/go-control-plane/envoy/config/core/v3"
 	proto "github.com/golang/protobuf/proto"
 	timestamp "github.com/golang/protobuf/ptypes/timestamp"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"

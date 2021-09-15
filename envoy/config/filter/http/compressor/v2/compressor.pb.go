@@ -7,8 +7,8 @@
 package envoy_config_filter_http_compressor_v2
 
 import (
-	core "github.com/FeiYing9/go-control-plane/envoy/api/v2/core"
 	_ "github.com/cncf/udpa/go/udpa/annotations"
+	core "github.com/envoyproxy/go-control-plane/envoy/api/v2/core"
 	proto "github.com/golang/protobuf/proto"
 	wrappers "github.com/golang/protobuf/ptypes/wrappers"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"

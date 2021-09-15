@@ -7,10 +7,10 @@
 package envoy_admin_v3
 
 import (
-	v31 "github.com/FeiYing9/go-control-plane/envoy/config/cluster/v3"
-	v32 "github.com/FeiYing9/go-control-plane/envoy/config/core/v3"
-	v3 "github.com/FeiYing9/go-control-plane/envoy/type/v3"
 	_ "github.com/cncf/udpa/go/udpa/annotations"
+	v31 "github.com/envoyproxy/go-control-plane/envoy/config/cluster/v3"
+	v32 "github.com/envoyproxy/go-control-plane/envoy/config/core/v3"
+	v3 "github.com/envoyproxy/go-control-plane/envoy/type/v3"
 	proto "github.com/golang/protobuf/proto"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"

@@ -7,8 +7,8 @@
 package envoy_extensions_common_tap_v4alpha
 
 import (
-	v4alpha "github.com/FeiYing9/go-control-plane/envoy/config/tap/v4alpha"
 	_ "github.com/cncf/udpa/go/udpa/annotations"
+	v4alpha "github.com/envoyproxy/go-control-plane/envoy/config/tap/v4alpha"
 	_ "github.com/envoyproxy/protoc-gen-validate/validate"
 	proto "github.com/golang/protobuf/proto"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"

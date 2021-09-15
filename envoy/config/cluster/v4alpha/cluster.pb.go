@@ -7,12 +7,12 @@
 package envoy_config_cluster_v4alpha
 
 import (
-	_ "github.com/FeiYing9/go-control-plane/envoy/annotations"
-	v4alpha "github.com/FeiYing9/go-control-plane/envoy/config/core/v4alpha"
-	v31 "github.com/FeiYing9/go-control-plane/envoy/config/endpoint/v3"
-	v32 "github.com/FeiYing9/go-control-plane/envoy/type/v3"
 	_ "github.com/cncf/udpa/go/udpa/annotations"
 	v3 "github.com/cncf/udpa/go/xds/core/v3"
+	_ "github.com/envoyproxy/go-control-plane/envoy/annotations"
+	v4alpha "github.com/envoyproxy/go-control-plane/envoy/config/core/v4alpha"
+	v31 "github.com/envoyproxy/go-control-plane/envoy/config/endpoint/v3"
+	v32 "github.com/envoyproxy/go-control-plane/envoy/type/v3"
 	_ "github.com/envoyproxy/protoc-gen-validate/validate"
 	proto "github.com/golang/protobuf/proto"
 	any "github.com/golang/protobuf/ptypes/any"

@@ -7,8 +7,8 @@
 package envoy_service_discovery_v3
 
 import (
-	v3 "github.com/FeiYing9/go-control-plane/envoy/config/core/v3"
 	_ "github.com/cncf/udpa/go/udpa/annotations"
+	v3 "github.com/envoyproxy/go-control-plane/envoy/config/core/v3"
 	proto "github.com/golang/protobuf/proto"
 	any "github.com/golang/protobuf/ptypes/any"
 	duration "github.com/golang/protobuf/ptypes/duration"

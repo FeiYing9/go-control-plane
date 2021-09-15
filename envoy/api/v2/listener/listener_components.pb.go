@@ -7,10 +7,10 @@
 package envoy_api_v2_listener
 
 import (
-	auth "github.com/FeiYing9/go-control-plane/envoy/api/v2/auth"
-	core "github.com/FeiYing9/go-control-plane/envoy/api/v2/core"
-	_type "github.com/FeiYing9/go-control-plane/envoy/type"
 	_ "github.com/cncf/udpa/go/udpa/annotations"
+	auth "github.com/envoyproxy/go-control-plane/envoy/api/v2/auth"
+	core "github.com/envoyproxy/go-control-plane/envoy/api/v2/core"
+	_type "github.com/envoyproxy/go-control-plane/envoy/type"
 	_ "github.com/envoyproxy/protoc-gen-validate/validate"
 	proto "github.com/golang/protobuf/proto"
 	any "github.com/golang/protobuf/ptypes/any"

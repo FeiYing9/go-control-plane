@@ -7,14 +7,14 @@
 package envoy_extensions_filters_network_http_connection_manager_v4alpha
 
 import (
-	_ "github.com/FeiYing9/go-control-plane/envoy/annotations"
-	v4alpha1 "github.com/FeiYing9/go-control-plane/envoy/config/accesslog/v4alpha"
-	v4alpha "github.com/FeiYing9/go-control-plane/envoy/config/core/v4alpha"
-	v4alpha2 "github.com/FeiYing9/go-control-plane/envoy/config/route/v4alpha"
-	v4alpha3 "github.com/FeiYing9/go-control-plane/envoy/config/trace/v4alpha"
-	v31 "github.com/FeiYing9/go-control-plane/envoy/type/tracing/v3"
-	v3 "github.com/FeiYing9/go-control-plane/envoy/type/v3"
 	_ "github.com/cncf/udpa/go/udpa/annotations"
+	_ "github.com/envoyproxy/go-control-plane/envoy/annotations"
+	v4alpha1 "github.com/envoyproxy/go-control-plane/envoy/config/accesslog/v4alpha"
+	v4alpha "github.com/envoyproxy/go-control-plane/envoy/config/core/v4alpha"
+	v4alpha2 "github.com/envoyproxy/go-control-plane/envoy/config/route/v4alpha"
+	v4alpha3 "github.com/envoyproxy/go-control-plane/envoy/config/trace/v4alpha"
+	v31 "github.com/envoyproxy/go-control-plane/envoy/type/tracing/v3"
+	v3 "github.com/envoyproxy/go-control-plane/envoy/type/v3"
 	_ "github.com/envoyproxy/protoc-gen-validate/validate"
 	proto "github.com/golang/protobuf/proto"
 	any "github.com/golang/protobuf/ptypes/any"

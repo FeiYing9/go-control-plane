@@ -7,9 +7,9 @@
 package envoy_extensions_filters_http_adaptive_concurrency_v3
 
 import (
-	v31 "github.com/FeiYing9/go-control-plane/envoy/config/core/v3"
-	v3 "github.com/FeiYing9/go-control-plane/envoy/type/v3"
 	_ "github.com/cncf/udpa/go/udpa/annotations"
+	v31 "github.com/envoyproxy/go-control-plane/envoy/config/core/v3"
+	v3 "github.com/envoyproxy/go-control-plane/envoy/type/v3"
 	_ "github.com/envoyproxy/protoc-gen-validate/validate"
 	proto "github.com/golang/protobuf/proto"
 	duration "github.com/golang/protobuf/ptypes/duration"

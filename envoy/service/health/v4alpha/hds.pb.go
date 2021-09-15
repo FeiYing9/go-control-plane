@@ -8,10 +8,10 @@ package envoy_service_health_v4alpha
 
 import (
 	context "context"
-	v4alpha1 "github.com/FeiYing9/go-control-plane/envoy/config/cluster/v4alpha"
-	v4alpha "github.com/FeiYing9/go-control-plane/envoy/config/core/v4alpha"
-	v3 "github.com/FeiYing9/go-control-plane/envoy/config/endpoint/v3"
 	_ "github.com/cncf/udpa/go/udpa/annotations"
+	v4alpha1 "github.com/envoyproxy/go-control-plane/envoy/config/cluster/v4alpha"
+	v4alpha "github.com/envoyproxy/go-control-plane/envoy/config/core/v4alpha"
+	v3 "github.com/envoyproxy/go-control-plane/envoy/config/endpoint/v3"
 	proto "github.com/golang/protobuf/proto"
 	duration "github.com/golang/protobuf/ptypes/duration"
 	_ "google.golang.org/genproto/googleapis/api/annotations"

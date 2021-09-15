@@ -7,8 +7,8 @@
 package envoy_service_discovery_v4alpha
 
 import (
-	v4alpha "github.com/FeiYing9/go-control-plane/envoy/config/core/v4alpha"
 	_ "github.com/cncf/udpa/go/udpa/annotations"
+	v4alpha "github.com/envoyproxy/go-control-plane/envoy/config/core/v4alpha"
 	proto "github.com/golang/protobuf/proto"
 	any "github.com/golang/protobuf/ptypes/any"
 	duration "github.com/golang/protobuf/ptypes/duration"

@@ -8,9 +8,9 @@ package envoy_service_tap_v3
 
 import (
 	context "context"
-	v31 "github.com/FeiYing9/go-control-plane/envoy/config/core/v3"
-	v3 "github.com/FeiYing9/go-control-plane/envoy/data/tap/v3"
 	_ "github.com/cncf/udpa/go/udpa/annotations"
+	v31 "github.com/envoyproxy/go-control-plane/envoy/config/core/v3"
+	v3 "github.com/envoyproxy/go-control-plane/envoy/data/tap/v3"
 	_ "github.com/envoyproxy/protoc-gen-validate/validate"
 	proto "github.com/golang/protobuf/proto"
 	grpc "google.golang.org/grpc"
