@@ -244,6 +244,36 @@ func (m *DeltaDiscoveryRequest) Validate() error {
 
 	// no validation rules for TypeUrl
 
+	for idx, item := range m.GetXdsResourcesSubscribe() {
+		_, _ = idx, item
+
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return DeltaDiscoveryRequestValidationError{
+					field:  fmt.Sprintf("XdsResourcesSubscribe[%v]", idx),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
+
+	for idx, item := range m.GetXdsResourcesUnsubscribe() {
+		_, _ = idx, item
+
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return DeltaDiscoveryRequestValidationError{
+					field:  fmt.Sprintf("XdsResourcesUnsubscribe[%v]", idx),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
+
 	// no validation rules for InitialResourceVersions
 
 	// no validation rules for ResponseNonce
@@ -344,6 +374,21 @@ func (m *DeltaDiscoveryResponse) Validate() error {
 
 	// no validation rules for TypeUrl
 
+	for idx, item := range m.GetUdpaRemovedResources() {
+		_, _ = idx, item
+
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return DeltaDiscoveryResponseValidationError{
+					field:  fmt.Sprintf("UdpaRemovedResources[%v]", idx),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
+
 	// no validation rules for Nonce
 
 	return nil
@@ -413,6 +458,16 @@ func (m *Resource) Validate() error {
 	}
 
 	// no validation rules for Name
+
+	if v, ok := interface{}(m.GetXdsResourceName()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ResourceValidationError{
+				field:  "XdsResourceName",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	// no validation rules for Version
 

@@ -242,7 +242,7 @@ func (x *CommonGrpcAccessLogConfig) GetTransportApiVersion() v4alpha.ApiVersion 
 	if x != nil {
 		return x.TransportApiVersion
 	}
-	return v4alpha.ApiVersion_hidden_envoy_deprecated_AUTO
+	return v4alpha.ApiVersion_AUTO
 }
 
 func (x *CommonGrpcAccessLogConfig) GetBufferFlushInterval() *duration.Duration {

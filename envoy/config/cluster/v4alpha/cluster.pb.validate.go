@@ -241,40 +241,40 @@ func (m *Cluster) Validate() error {
 		}
 	}
 
-	if v, ok := interface{}(m.GetHiddenEnvoyDeprecatedUpstreamHttpProtocolOptions()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetUpstreamHttpProtocolOptions()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return ClusterValidationError{
-				field:  "HiddenEnvoyDeprecatedUpstreamHttpProtocolOptions",
+				field:  "UpstreamHttpProtocolOptions",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}
 		}
 	}
 
-	if v, ok := interface{}(m.GetHiddenEnvoyDeprecatedCommonHttpProtocolOptions()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetCommonHttpProtocolOptions()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return ClusterValidationError{
-				field:  "HiddenEnvoyDeprecatedCommonHttpProtocolOptions",
+				field:  "CommonHttpProtocolOptions",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}
 		}
 	}
 
-	if v, ok := interface{}(m.GetHiddenEnvoyDeprecatedHttpProtocolOptions()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetHttpProtocolOptions()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return ClusterValidationError{
-				field:  "HiddenEnvoyDeprecatedHttpProtocolOptions",
+				field:  "HttpProtocolOptions",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}
 		}
 	}
 
-	if v, ok := interface{}(m.GetHiddenEnvoyDeprecatedHttp2ProtocolOptions()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetHttp2ProtocolOptions()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return ClusterValidationError{
-				field:  "HiddenEnvoyDeprecatedHttp2ProtocolOptions",
+				field:  "Http2ProtocolOptions",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}
@@ -436,7 +436,7 @@ func (m *Cluster) Validate() error {
 		}
 	}
 
-	// no validation rules for HiddenEnvoyDeprecatedProtocolSelection
+	// no validation rules for ProtocolSelection
 
 	if v, ok := interface{}(m.GetUpstreamConnectionOptions()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
@@ -509,10 +509,10 @@ func (m *Cluster) Validate() error {
 		}
 	}
 
-	if v, ok := interface{}(m.GetPreconnectPolicy()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetPrefetchPolicy()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return ClusterValidationError{
-				field:  "PreconnectPolicy",
+				field:  "PrefetchPolicy",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}
@@ -1163,7 +1163,24 @@ func (m *Cluster_EdsClusterConfig) Validate() error {
 		}
 	}
 
-	// no validation rules for ServiceName
+	switch m.NameSpecifier.(type) {
+
+	case *Cluster_EdsClusterConfig_ServiceName:
+		// no validation rules for ServiceName
+
+	case *Cluster_EdsClusterConfig_EdsResourceLocator:
+
+		if v, ok := interface{}(m.GetEdsResourceLocator()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return Cluster_EdsClusterConfigValidationError{
+					field:  "EdsResourceLocator",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
 
 	return nil
 }
@@ -1908,30 +1925,30 @@ var _ interface {
 	ErrorName() string
 } = Cluster_RefreshRateValidationError{}
 
-// Validate checks the field values on Cluster_PreconnectPolicy with the rules
+// Validate checks the field values on Cluster_PrefetchPolicy with the rules
 // defined in the proto definition for this message. If any rules are
 // violated, an error is returned.
-func (m *Cluster_PreconnectPolicy) Validate() error {
+func (m *Cluster_PrefetchPolicy) Validate() error {
 	if m == nil {
 		return nil
 	}
 
-	if wrapper := m.GetPerUpstreamPreconnectRatio(); wrapper != nil {
+	if wrapper := m.GetPerUpstreamPrefetchRatio(); wrapper != nil {
 
 		if val := wrapper.GetValue(); val < 1 || val > 3 {
-			return Cluster_PreconnectPolicyValidationError{
-				field:  "PerUpstreamPreconnectRatio",
+			return Cluster_PrefetchPolicyValidationError{
+				field:  "PerUpstreamPrefetchRatio",
 				reason: "value must be inside range [1, 3]",
 			}
 		}
 
 	}
 
-	if wrapper := m.GetPredictivePreconnectRatio(); wrapper != nil {
+	if wrapper := m.GetPredictivePrefetchRatio(); wrapper != nil {
 
 		if val := wrapper.GetValue(); val < 1 || val > 3 {
-			return Cluster_PreconnectPolicyValidationError{
-				field:  "PredictivePreconnectRatio",
+			return Cluster_PrefetchPolicyValidationError{
+				field:  "PredictivePrefetchRatio",
 				reason: "value must be inside range [1, 3]",
 			}
 		}
@@ -1941,9 +1958,9 @@ func (m *Cluster_PreconnectPolicy) Validate() error {
 	return nil
 }
 
-// Cluster_PreconnectPolicyValidationError is the validation error returned by
-// Cluster_PreconnectPolicy.Validate if the designated constraints aren't met.
-type Cluster_PreconnectPolicyValidationError struct {
+// Cluster_PrefetchPolicyValidationError is the validation error returned by
+// Cluster_PrefetchPolicy.Validate if the designated constraints aren't met.
+type Cluster_PrefetchPolicyValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -1951,24 +1968,24 @@ type Cluster_PreconnectPolicyValidationError struct {
 }
 
 // Field function returns field value.
-func (e Cluster_PreconnectPolicyValidationError) Field() string { return e.field }
+func (e Cluster_PrefetchPolicyValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e Cluster_PreconnectPolicyValidationError) Reason() string { return e.reason }
+func (e Cluster_PrefetchPolicyValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e Cluster_PreconnectPolicyValidationError) Cause() error { return e.cause }
+func (e Cluster_PrefetchPolicyValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e Cluster_PreconnectPolicyValidationError) Key() bool { return e.key }
+func (e Cluster_PrefetchPolicyValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e Cluster_PreconnectPolicyValidationError) ErrorName() string {
-	return "Cluster_PreconnectPolicyValidationError"
+func (e Cluster_PrefetchPolicyValidationError) ErrorName() string {
+	return "Cluster_PrefetchPolicyValidationError"
 }
 
 // Error satisfies the builtin error interface
-func (e Cluster_PreconnectPolicyValidationError) Error() string {
+func (e Cluster_PrefetchPolicyValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -1980,14 +1997,14 @@ func (e Cluster_PreconnectPolicyValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sCluster_PreconnectPolicy.%s: %s%s",
+		"invalid %sCluster_PrefetchPolicy.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = Cluster_PreconnectPolicyValidationError{}
+var _ error = Cluster_PrefetchPolicyValidationError{}
 
 var _ interface {
 	Field() string
@@ -1995,7 +2012,7 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = Cluster_PreconnectPolicyValidationError{}
+} = Cluster_PrefetchPolicyValidationError{}
 
 // Validate checks the field values on Cluster_LbSubsetConfig_LbSubsetSelector
 // with the rules defined in the proto definition for this message. If any
