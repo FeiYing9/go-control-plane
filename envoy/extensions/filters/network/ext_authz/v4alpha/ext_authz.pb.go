@@ -7,7 +7,7 @@
 package envoy_extensions_filters_network_ext_authz_v4alpha
 
 import (
-	_ "github.com/cncf/udpa/go/udpa/annotations"
+	_ "github.com/cncf/xds/go/udpa/annotations"
 	v4alpha "github.com/envoyproxy/go-control-plane/envoy/config/core/v4alpha"
 	v4alpha1 "github.com/envoyproxy/go-control-plane/envoy/type/matcher/v4alpha"
 	_ "github.com/envoyproxy/protoc-gen-validate/validate"
@@ -126,7 +126,7 @@ func (x *ExtAuthz) GetTransportApiVersion() v4alpha.ApiVersion {
 	if x != nil {
 		return x.TransportApiVersion
 	}
-	return v4alpha.ApiVersion_AUTO
+	return v4alpha.ApiVersion_hidden_envoy_deprecated_AUTO
 }
 
 func (x *ExtAuthz) GetFilterEnabledMetadata() *v4alpha1.MetadataMatcher {

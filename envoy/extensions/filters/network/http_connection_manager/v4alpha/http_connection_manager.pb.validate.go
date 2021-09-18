@@ -329,8 +329,6 @@ func (m *HttpConnectionManager) Validate() error {
 		}
 	}
 
-	// no validation rules for StripMatchingHostPort
-
 	if v, ok := interface{}(m.GetStreamErrorOnInvalidHttpMessage()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return HttpConnectionManagerValidationError{
@@ -384,6 +382,16 @@ func (m *HttpConnectionManager) Validate() error {
 			field:  "RouteSpecifier",
 			reason: "value is required",
 		}
+
+	}
+
+	switch m.StripPortMode.(type) {
+
+	case *HttpConnectionManager_StripMatchingHostPort:
+		// no validation rules for StripMatchingHostPort
+
+	case *HttpConnectionManager_StripAnyHostPort:
+		// no validation rules for StripAnyHostPort
 
 	}
 
@@ -697,24 +705,7 @@ func (m *Rds) Validate() error {
 		}
 	}
 
-	switch m.NameSpecifier.(type) {
-
-	case *Rds_RouteConfigName:
-		// no validation rules for RouteConfigName
-
-	case *Rds_RdsResourceLocator:
-
-		if v, ok := interface{}(m.GetRdsResourceLocator()).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return RdsValidationError{
-					field:  "RdsResourceLocator",
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
-			}
-		}
-
-	}
+	// no validation rules for RouteConfigName
 
 	return nil
 }

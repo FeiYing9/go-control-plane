@@ -7,7 +7,7 @@
 package envoy_extensions_access_loggers_grpc_v4alpha
 
 import (
-	_ "github.com/cncf/udpa/go/udpa/annotations"
+	_ "github.com/cncf/xds/go/udpa/annotations"
 	v4alpha "github.com/envoyproxy/go-control-plane/envoy/config/core/v4alpha"
 	_ "github.com/envoyproxy/protoc-gen-validate/validate"
 	proto "github.com/golang/protobuf/proto"
@@ -242,7 +242,7 @@ func (x *CommonGrpcAccessLogConfig) GetTransportApiVersion() v4alpha.ApiVersion 
 	if x != nil {
 		return x.TransportApiVersion
 	}
-	return v4alpha.ApiVersion_AUTO
+	return v4alpha.ApiVersion_hidden_envoy_deprecated_AUTO
 }
 
 func (x *CommonGrpcAccessLogConfig) GetBufferFlushInterval() *duration.Duration {

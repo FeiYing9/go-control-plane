@@ -117,28 +117,6 @@ func (m *Bootstrap) Validate() error {
 		}
 	}
 
-	if d := m.GetStatsFlushInterval(); d != nil {
-		dur, err := ptypes.Duration(d)
-		if err != nil {
-			return BootstrapValidationError{
-				field:  "StatsFlushInterval",
-				reason: "value is not a valid duration",
-				cause:  err,
-			}
-		}
-
-		lt := time.Duration(300*time.Second + 0*time.Nanosecond)
-		gte := time.Duration(0*time.Second + 1000000*time.Nanosecond)
-
-		if dur < gte || dur >= lt {
-			return BootstrapValidationError{
-				field:  "StatsFlushInterval",
-				reason: "value must be inside range [1ms, 5m0s)",
-			}
-		}
-
-	}
-
 	if v, ok := interface{}(m.GetHiddenEnvoyDeprecatedWatchdog()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return BootstrapValidationError{
@@ -284,6 +262,43 @@ func (m *Bootstrap) Validate() error {
 					reason: "embedded message failed validation",
 					cause:  err,
 				}
+			}
+		}
+
+	}
+
+	switch m.StatsFlush.(type) {
+
+	case *Bootstrap_StatsFlushInterval:
+
+		if d := m.GetStatsFlushInterval(); d != nil {
+			dur, err := ptypes.Duration(d)
+			if err != nil {
+				return BootstrapValidationError{
+					field:  "StatsFlushInterval",
+					reason: "value is not a valid duration",
+					cause:  err,
+				}
+			}
+
+			lt := time.Duration(300*time.Second + 0*time.Nanosecond)
+			gte := time.Duration(0*time.Second + 1000000*time.Nanosecond)
+
+			if dur < gte || dur >= lt {
+				return BootstrapValidationError{
+					field:  "StatsFlushInterval",
+					reason: "value must be inside range [1ms, 5m0s)",
+				}
+			}
+
+		}
+
+	case *Bootstrap_StatsFlushOnAdmin:
+
+		if m.GetStatsFlushOnAdmin() != true {
+			return BootstrapValidationError{
+				field:  "StatsFlushOnAdmin",
+				reason: "value must equal true",
 			}
 		}
 
@@ -1265,15 +1280,7 @@ func (m *Bootstrap_DynamicResources) Validate() error {
 		}
 	}
 
-	if v, ok := interface{}(m.GetLdsResourcesLocator()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return Bootstrap_DynamicResourcesValidationError{
-				field:  "LdsResourcesLocator",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
+	// no validation rules for LdsResourcesLocator
 
 	if v, ok := interface{}(m.GetCdsConfig()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
@@ -1285,15 +1292,7 @@ func (m *Bootstrap_DynamicResources) Validate() error {
 		}
 	}
 
-	if v, ok := interface{}(m.GetCdsResourcesLocator()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return Bootstrap_DynamicResourcesValidationError{
-				field:  "CdsResourcesLocator",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
+	// no validation rules for CdsResourcesLocator
 
 	if v, ok := interface{}(m.GetAdsConfig()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
@@ -1676,6 +1675,8 @@ func (m *RuntimeLayer_RtdsLayer) Validate() error {
 		return nil
 	}
 
+	// no validation rules for Name
+
 	if v, ok := interface{}(m.GetRtdsConfig()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return RuntimeLayer_RtdsLayerValidationError{
@@ -1684,25 +1685,6 @@ func (m *RuntimeLayer_RtdsLayer) Validate() error {
 				cause:  err,
 			}
 		}
-	}
-
-	switch m.NameSpecifier.(type) {
-
-	case *RuntimeLayer_RtdsLayer_Name:
-		// no validation rules for Name
-
-	case *RuntimeLayer_RtdsLayer_RtdsResourceLocator:
-
-		if v, ok := interface{}(m.GetRtdsResourceLocator()).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return RuntimeLayer_RtdsLayerValidationError{
-					field:  "RtdsResourceLocator",
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
-			}
-		}
-
 	}
 
 	return nil
