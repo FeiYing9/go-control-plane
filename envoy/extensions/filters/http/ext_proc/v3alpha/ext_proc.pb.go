@@ -38,6 +38,7 @@ type ExternalProcessor struct {
 	// Configuration for the gRPC service that the filter will communicate with.
 	// The filter supports both the "Envoy" and "Google" gRPC clients.
 	GrpcService *v3.GrpcService `protobuf:"bytes,1,opt,name=grpc_service,json=grpcService,proto3" json:"grpc_service,omitempty"`
+	// [#not-implemented-hide:]
 	// By default, if the gRPC stream cannot be established, or if it is closed
 	// prematurely with an error, the filter will fail. Specifically, if the
 	// response headers have not yet been delivered, then it will return a 500
@@ -46,6 +47,7 @@ type ExternalProcessor struct {
 	// With this parameter set to true, however, then if the gRPC stream is prematurely closed
 	// or could not be opened, processing continues without error.
 	FailureModeAllow bool `protobuf:"varint,2,opt,name=failure_mode_allow,json=failureModeAllow,proto3" json:"failure_mode_allow,omitempty"`
+	// [#not-implemented-hide:]
 	// Specifies default options for how HTTP headers, trailers, and bodies are
 	// sent. See ProcessingMode for details.
 	ProcessingMode *ProcessingMode `protobuf:"bytes,3,opt,name=processing_mode,json=processingMode,proto3" json:"processing_mode,omitempty"`
